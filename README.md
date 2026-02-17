@@ -20,6 +20,7 @@
     - Method references
     - Basic in-memory CRUD
     - Backend logic simulation
+    - OOP
 
 ## Folder Structure
 

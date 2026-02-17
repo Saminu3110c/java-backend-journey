@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentManager {
 
@@ -38,15 +39,23 @@ public class StudentManager {
     }
 
     // Adding new method
-    public List<Student> getStudentsAboveAge(int age){
-        List<Student> studentsAboveAge = new ArrayList<>();
-        for(Student student : students){
-            if(student.getAge() > age){
-                studentsAboveAge.add(student);
-            }
-        }
-        return studentsAboveAge;
+    // public List<Student> getStudentsAboveAge(int age){
+    //     List<Student> studentsAboveAge = new ArrayList<>();
+    //     for(Student student : students){
+    //         if(student.getAge() > age){
+    //             studentsAboveAge.add(student);
+    //         }
+    //     }
+    //     return studentsAboveAge;
+    // }
+
+    // Using API stream (Better way)
+    public List<Student> getStudentsAboveAge(int age) {
+        return students.stream()
+                .filter(student -> student.getAge() > age)
+                .collect(Collectors.toList());
     }
+
 
 }
 
