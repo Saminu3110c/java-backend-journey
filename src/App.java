@@ -20,9 +20,12 @@ public class App {
 
         Student s1 = new Student(1, "Ali", "ali@email.com", 20);
         Student s2 = new Student(2, "Maryam", "maryam@email.com", 22);
+        Student s3 = new Student(2, "Aisha", "aisha@email.com", 22);
 
         manager.addStudent(s1);
         manager.addStudent(s2);
+        // manager.addStudent(s3);
+
 
         manager.printAllStudents();
 
@@ -30,8 +33,12 @@ public class App {
         System.out.println(manager.findStudentById(1));
 
         manager.removeStudentById(1);
+        // manager.removeStudentById(4);
 
         System.out.println("After removal:");
         manager.printAllStudents();
+
+        System.out.println("\n\nStudent above age: ");
+        System.out.println(manager.getStudentsAboveAge(20));
     }
 }
