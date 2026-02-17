@@ -1,3 +1,16 @@
+# WEEK 1 — Core Java (Strong Foundation)
+- Goal:
+-- Think in Java. Write clean Java. Understand how Java actually works.
+
+## Day 1–2: Java Fundamentals (But Properly)
+- What You Just Practiced
+    - Encapsulation (private fields)
+    - Constructor validation
+    - Static variables
+    - Method overriding
+    - Object instantiation
+    - Class interaction
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
