@@ -39,6 +39,25 @@ public class Student {
         return studentCount;
     }
 
+    // Mini challenge
+    public void updateEmail(String newEmail){
+        // if(newEmail.contains("@")){
+        //     this.email = newEmail;
+        // }
+        // else {
+        //     throw new IllegalArgumentException("Use a valid email format");
+        // }
+
+        // For better validation
+        if (newEmail == null || !newEmail.contains("@") || newEmail.trim().isEmpty()) {
+            throw new IllegalArgumentException("Use a valid email format");
+        }
+        this.email = newEmail;
+
+       
+    }
+
+
     @Override
     public String toString() {
         return "Student{id=" + id +

@@ -9,5 +9,11 @@ public class App {
         System.out.println(s3);
 
         System.out.println("Total students created: " + Student.getStudentCount());
+
+        try {
+            s1.updateEmail("aliadamu.email.com");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
