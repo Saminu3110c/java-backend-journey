@@ -11,6 +11,15 @@
     - Object instantiation
     - Class interaction
 
+## DAY 2 — Let’s Level Up (Collections)
+- What You’re Learning Now
+    - List<Student>
+    - ArrayList
+    - removeIf()
+    - Lambda expressions
+    - Method references
+    - Basic in-memory CRUD
+    - Backend logic simulation
 
 ## Folder Structure
 
