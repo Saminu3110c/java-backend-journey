@@ -1,6 +1,6 @@
 # WEEK 1 — Core Java (Strong Foundation)
 - Goal:
--- Think in Java. Write clean Java. Understand how Java actually works.
+    - Think in Java. Write clean Java. Understand how Java actually works.
 
 ## Day 1–2: Java Fundamentals (But Properly)
 - What Just Practiced
@@ -12,7 +12,7 @@
     - Class interaction
 
 ## DAY 2 — Let’s Level Up (Collections)
-- What You’re Learning Now
+- What We’re Learning Now
     - List<Student>
     - ArrayList
     - removeIf()
@@ -21,6 +21,19 @@
     - Basic in-memory CRUD
     - Backend logic simulation
     - OOP
+
+## What we’ve Mastered So Far
+- We now understand:
+    - Collections
+    - Streams
+    - filter()
+    - map()
+    - count()
+    - anyMatch()
+    - Lambda expressions
+    - Object comparison in Java
+    - Service-layer style coding
+- We’re already thinking like someone writing Spring Boot services.
 
 ## Folder Structure
 
