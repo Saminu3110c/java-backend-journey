@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StudentManager {
@@ -56,6 +58,25 @@ public class StudentManager {
                 .collect(Collectors.toList());
     }
 
+    // Returning the counts of those the given age
+    public long countStudentsAboveAge(int age){
+        return students.stream()
+                .filter(student -> student.getAge() > age)
+                .count();
+    }
 
-}
+    //  Get only the emails of all students
+    public List<String> getAllStudentEmails() {
+        return students.stream()
+            .map(Student::getEmail)
+            .collect(Collectors.toList());
+    }
+
+    // OR
+    // public List<String> getAllStudentEmails() {
+    //     return students.stream()
+    //             .map(student -> student.getEmail())
+    //             .collect(Collectors.toList());
+    // }
+ }
 
