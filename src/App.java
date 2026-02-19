@@ -46,5 +46,6 @@ public class App {
         // System.out.println(manager.getStudentsAboveAge(20));
         // System.out.println("\n\nNumber of Students above age: " + manager.countStudentsAboveAge(20));
         System.out.println(manager.getAllStudentEmails());
+        System.out.println(manager.emailExists("aminu@email.com"));
     }
 }

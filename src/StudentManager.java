@@ -78,5 +78,12 @@ public class StudentManager {
     //             .map(student -> student.getEmail())
     //             .collect(Collectors.toList());
     // }
+
+    // Checking whether an email exists
+    public boolean emailExists(String email){
+        return students.stream()
+                .anyMatch(student -> email != null && email.equals(student.getEmail()));
+                
+    }
  }
 
