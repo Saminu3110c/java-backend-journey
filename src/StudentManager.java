@@ -35,7 +35,7 @@ public class StudentManager {
                 return student;
             }
         }
-        return null;
+        throw new StudentNotFoundException("Student with id " + id + " not found.");
     }
 
     public void printAllStudents() {
