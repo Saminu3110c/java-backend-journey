@@ -12,7 +12,8 @@ public class StudentManager {
         // Prevent duplicate student IDs
         for (Student student : students) {
             if (student.getId() == newStudent.getId()) {
-                throw new IllegalArgumentException("Student with the id: " + newStudent.getId() + " already exist!");
+                // throw new IllegalArgumentException("Student with the id: " + newStudent.getId() + " already exist!");
+                throw new DuplicateStudentException("Student with id " + newStudent.getId() + " already exists.");
             }
         }
         students.add(newStudent);
@@ -22,7 +23,8 @@ public class StudentManager {
     public void removeStudentById(int id) {
         // throw exception when id not found
         if(!(students.removeIf(student -> student.getId() == id))){
-            throw new IllegalArgumentException("Student not found!");
+            // throw new IllegalArgumentException("Student not found!");
+            throw new StudentNotFoundException("Student with id " + id + " not found.");
         }
 
     }
