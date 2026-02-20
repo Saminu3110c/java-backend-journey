@@ -1,45 +1,76 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StudentManager {
 
-    private List<Student> students = new ArrayList<>();
+    // private List<Student> students = new ArrayList<>();
+    private Map<Integer, Student> students = new HashMap<>();
+
+    // public void addStudent(Student newStudent) {
+    //     // Prevent duplicate student IDs
+    //     for (Student student : students) {
+    //         if (student.getId() == newStudent.getId()) {
+    //             // throw new IllegalArgumentException("Student with the id: " + newStudent.getId() + " already exist!");
+    //             throw new DuplicateStudentException("Student with id " + newStudent.getId() + " already exists.");
+    //         }
+    //     }
+    //     students.add(newStudent);
+    // }
 
     public void addStudent(Student newStudent) {
-        // Prevent duplicate student IDs
-        for (Student student : students) {
-            if (student.getId() == newStudent.getId()) {
-                // throw new IllegalArgumentException("Student with the id: " + newStudent.getId() + " already exist!");
-                throw new DuplicateStudentException("Student with id " + newStudent.getId() + " already exists.");
-            }
+        if (students.containsKey(newStudent.getId())) {
+            throw new DuplicateStudentException(
+                "Student with id " + newStudent.getId() + " already exists."
+            );
         }
-        students.add(newStudent);
-
+        students.put(newStudent.getId(), newStudent);
     }
 
+    // public void removeStudentById(int id) {
+    //     // throw exception when id not found
+    //     if(!(students.removeIf(student -> student.getId() == id))){
+    //         // throw new IllegalArgumentException("Student not found!");
+    //         throw new StudentNotFoundException("Student with id " + id + " not found.");
+    //     }
+    // }
     public void removeStudentById(int id) {
-        // throw exception when id not found
-        if(!(students.removeIf(student -> student.getId() == id))){
-            // throw new IllegalArgumentException("Student not found!");
-            throw new StudentNotFoundException("Student with id " + id + " not found.");
-        }
-
+    if (students.remove(id) == null) {
+        throw new StudentNotFoundException(
+            "Student with id " + id + " not found."
+        );
     }
+}
 
+    // public Student findStudentById(int id) {
+    //     for (Student student : students) {
+    //         if (student.getId() == id) {
+    //             return student;
+    //         }
+    //     }
+    //     throw new StudentNotFoundException("Student with id " + id + " not found.");
+    // }
     public Student findStudentById(int id) {
-        for (Student student : students) {
-            if (student.getId() == id) {
-                return student;
-            }
+        Student student = students.get(id);
+
+        if (student == null) {
+            throw new StudentNotFoundException(
+                "Student with id " + id + " not found."
+            );
         }
-        throw new StudentNotFoundException("Student with id " + id + " not found.");
+
+        return student;
     }
 
+    // public void printAllStudents() {
+    //     students.forEach(System.out::println);
+    // }
     public void printAllStudents() {
-        students.forEach(System.out::println);
+        students.values().forEach(System.out::println);
     }
 
     // Adding new method
