@@ -1,21 +1,6 @@
 public class App {
     public static void main(String[] args){
         try {
-            // Student s1 = new Student(1, "Ali", "ali@email.com", 20);
-            // Student s2 = new Student(2, "Maryam", "maryam@email.com", 22);
-            // Student s3 = new Student(3, "John", "john@email.com", 19);
-
-            // System.out.println(s1);
-            // System.out.println(s2);
-            // System.out.println(s3);
-
-            // System.out.println("Total students created: " + Student.getStudentCount());
-
-            // try {
-            //     s1.updateEmail("aliadamu.email.com");
-            // } catch (Exception e) {
-            //     e.printStackTrace();
-            // }
 
             StudentManager manager = new StudentManager();
 
@@ -36,7 +21,7 @@ public class App {
             // manager.printAllStudents();
 
             // System.out.println("Finding student with ID 1:");
-            System.out.println(manager.findStudentById(7));
+            // System.out.println(manager.findStudentById(7));
 
             // manager.removeStudentById(1);
             // manager.removeStudentById(7);
@@ -50,20 +35,8 @@ public class App {
 
             // System.out.println(manager.getAllStudentEmails());
 
-            // System.out.println(manager.emailExists("aminu@email.com"));
+            System.out.println(manager.emailExists("aminu@email.com"));
 
-            // Getting to understand "==" and equals()
-            // String x = "java";
-            // String y = "java";
-
-            // System.out.println(x == y);        // ?
-            // System.out.println(x.equals(y));   // ?
-
-            // String p = new String("java");
-            // String q = new String("java");
-
-            // System.out.println(p == q);        // ?
-            // System.out.println(p.equals(q));   // ?
             
         } catch (StudentNotFoundException e) {
             System.out.println(e.getMessage());

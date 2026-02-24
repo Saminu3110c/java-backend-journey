@@ -1,15 +1,92 @@
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StudentManager {
 
-    // private List<Student> students = new ArrayList<>();
     private Map<Integer, Student> students = new HashMap<>();
+
+    // Add Student
+    public void addStudent(Student newStudent) {
+        if (students.containsKey(newStudent.getId())) {
+            throw new DuplicateStudentException(
+                    "Student with id " + newStudent.getId() + " already exists."
+            );
+        }
+        students.put(newStudent.getId(), newStudent);
+    }
+
+    // Remove Student
+    public void removeStudentById(int id) {
+        if (students.remove(id) == null) {
+            throw new StudentNotFoundException(
+                    "Student with id " + id + " not found."
+            );
+        }
+    }
+
+    // Find Student
+    public Student findStudentById(int id) {
+        Student student = students.get(id);
+
+        if (student == null) {
+            throw new StudentNotFoundException(
+                    "Student with id " + id + " not found."
+            );
+        }
+
+        return student;
+    }
+
+    // Print All
+    public void printAllStudents() {
+        students.values().forEach(System.out::println);
+    }
+
+    // Students above age
+    public List<Student> getStudentsAboveAge(int age) {
+        return students.values().stream()
+                .filter(student -> student.getAge() > age)
+                .collect(Collectors.toList());
+    }
+
+    // Count students above age
+    public long countStudentsAboveAge(int age) {
+        return students.values().stream()
+                .filter(student -> student.getAge() > age)
+                .count();
+    }
+
+    // Get all emails
+    public List<String> getAllStudentEmails() {
+        return students.values().stream()
+                .map(Student::getEmail)
+                .collect(Collectors.toList());
+    }
+
+    // Check if email exists
+    public boolean emailExists(String email) {
+        return students.values().stream()
+                .anyMatch(student -> email.equals(student.getEmail()));
+    }
+}
+
+
+
+
+
+// import java.util.ArrayList;
+// import java.util.HashMap;
+// import java.util.HashSet;
+// import java.util.List;
+// import java.util.Map;
+// import java.util.Set;
+// import java.util.stream.Collectors;
+
+// public class StudentManager {
+
+    // private List<Student> students = new ArrayList<>();
 
     // public void addStudent(Student newStudent) {
     //     // Prevent duplicate student IDs
@@ -22,14 +99,6 @@ public class StudentManager {
     //     students.add(newStudent);
     // }
 
-    public void addStudent(Student newStudent) {
-        if (students.containsKey(newStudent.getId())) {
-            throw new DuplicateStudentException(
-                "Student with id " + newStudent.getId() + " already exists."
-            );
-        }
-        students.put(newStudent.getId(), newStudent);
-    }
 
     // public void removeStudentById(int id) {
     //     // throw exception when id not found
@@ -38,13 +107,6 @@ public class StudentManager {
     //         throw new StudentNotFoundException("Student with id " + id + " not found.");
     //     }
     // }
-    public void removeStudentById(int id) {
-    if (students.remove(id) == null) {
-        throw new StudentNotFoundException(
-            "Student with id " + id + " not found."
-        );
-    }
-}
 
     // public Student findStudentById(int id) {
     //     for (Student student : students) {
@@ -54,24 +116,10 @@ public class StudentManager {
     //     }
     //     throw new StudentNotFoundException("Student with id " + id + " not found.");
     // }
-    public Student findStudentById(int id) {
-        Student student = students.get(id);
-
-        if (student == null) {
-            throw new StudentNotFoundException(
-                "Student with id " + id + " not found."
-            );
-        }
-
-        return student;
-    }
 
     // public void printAllStudents() {
     //     students.forEach(System.out::println);
     // }
-    public void printAllStudents() {
-        students.values().forEach(System.out::println);
-    }
 
     // Adding new method
     // public List<Student> getStudentsAboveAge(int age){
@@ -85,25 +133,25 @@ public class StudentManager {
     // }
 
     // Using API stream (Better way)
-    public List<Student> getStudentsAboveAge(int age) {
-        return students.stream()
-                .filter(student -> student.getAge() > age)
-                .collect(Collectors.toList());
-    }
+    // public List<Student> getStudentsAboveAge(int age) {
+    //     return students.stream()
+    //             .filter(student -> student.getAge() > age)
+    //             .collect(Collectors.toList());
+    // }
 
     // Returning the counts of those the given age
-    public long countStudentsAboveAge(int age){
-        return students.stream()
-                .filter(student -> student.getAge() > age)
-                .count();
-    }
+    // public long countStudentsAboveAge(int age){
+    //     return students.stream()
+    //             .filter(student -> student.getAge() > age)
+    //             .count();
+    // }
 
     //  Get only the emails of all students
-    public List<String> getAllStudentEmails() {
-        return students.stream()
-            .map(Student::getEmail)
-            .collect(Collectors.toList());
-    }
+    // public List<String> getAllStudentEmails() {
+    //     return students.stream()
+    //         .map(Student::getEmail)
+    //         .collect(Collectors.toList());
+    // }
 
     // OR
     // public List<String> getAllStudentEmails() {
@@ -113,10 +161,10 @@ public class StudentManager {
     // }
 
     // Checking whether an email exists
-    public boolean emailExists(String email){
-        return students.stream()
-                .anyMatch(student -> email != null && email.equals(student.getEmail()));
+    // public boolean emailExists(String email){
+    //     return students.stream()
+    //             .anyMatch(student -> email != null && email.equals(student.getEmail()));
                 
-    }
- }
+    // }
+//  }
 
