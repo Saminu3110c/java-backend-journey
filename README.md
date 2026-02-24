@@ -35,6 +35,16 @@
     - Service-layer style coding
 - We’re already thinking like someone writing Spring Boot services.
 
+## What Just Happened
+- Understanding:
+    - Map vs List internally
+    - Collection vs Map difference
+    - Why Map has views
+    - How streaming works with Map
+    - Performance thinking (O(1) vs O(n))
+- This is no longer beginner Java.
+- This is backend architecture mindset.
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:
