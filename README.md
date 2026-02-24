@@ -42,7 +42,6 @@
     - Why Map has views
     - How streaming works with Map
     - Performance thinking (O(1) vs O(n))
-- This is no longer beginner Java.
 - This is backend architecture mindset.
 
 ## What Just Happened
