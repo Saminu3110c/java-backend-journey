@@ -3,7 +3,7 @@
     - Think in Java. Write clean Java. Understand how Java actually works.
 
 ## Day 1–2: Java Fundamentals (But Properly)
-- What Just Practiced
+- What we Just Practiced
     - Encapsulation (private fields)
     - Constructor validation
     - Static variables
@@ -44,6 +44,15 @@
     - Performance thinking (O(1) vs O(n))
 - This is no longer beginner Java.
 - This is backend architecture mindset.
+
+## What Just Happened
+- We just manually implemented:
+    - Dependency Injection (constructor injection)
+    - Repository pattern
+    - Service layer
+    - Clean architecture separation
+- This is EXACTLY how Spring Boot works internally.
+- Spring just automates the wiring.
 
 ## Folder Structure
 
